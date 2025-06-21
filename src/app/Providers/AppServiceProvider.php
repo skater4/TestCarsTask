@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Adapters\JsonFileAuctionItemAdapter;
-use App\Contracts\AuctionItemProviderInterface;
+use App\Contracts\AuctionItemAdapterInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import AppContent from '@/components/AppContent.vue';
 import AppShell from '@/components/AppShell.vue';
-import AppSidebar from '@/components/AppSidebar.vue';
-import AppSidebarHeader from '@/components/AppSidebarHeader.vue';
 import type { BreadcrumbItemType } from '@/types';
 
 interface Props {
@@ -16,9 +14,19 @@ withDefaults(defineProps<Props>(), {
 
 <template>
     <AppShell variant="sidebar">
-        <AppSidebar />
+
         <AppContent variant="sidebar">
-            <AppSidebarHeader :breadcrumbs="breadcrumbs" />
+            <!-- ВЕРХНЕЕ МЕНЮ -->
+            <header class="bg-white dark:bg-gray-900 px-6 py-4 border-b border-gray-200 dark:border-gray-700">
+                <nav class="flex gap-6 text-sm font-medium">
+                    <a href="/vote" class="hover:underline text-gray-800 dark:text-white">Vote</a>
+                    <a href="/stats" class="hover:underline text-gray-800 dark:text-white">Statistic</a>
+                </nav>
+            </header>
+
+
+
+            <!-- Контент -->
             <slot />
         </AppContent>
     </AppShell>

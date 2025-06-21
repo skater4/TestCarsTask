@@ -16,4 +16,15 @@ readonly class AuctionItemService
     {
         return $this->auctionItemRepository->getModels();
     }
+
+    public function getPairForVote(string $model): array
+    {
+        return $this->auctionItemRepository
+            ->getRandomPairByModels($model)
+            ->map(fn($item) => [
+                'auction_item_id' => $item->auction_item_id,
+                'image_url' => asset('storage/images/' . $item->image),
+            ])
+            ->all();
+    }
 }

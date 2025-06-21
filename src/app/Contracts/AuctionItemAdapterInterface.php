@@ -4,7 +4,7 @@ namespace App\Contracts;
 
 use App\Dto\AuctionItemImportDto;
 
-interface AuctionItemProviderInterface
+interface AuctionItemAdapterInterface
 {
     /**
      * @return iterable<AuctionItemImportDto>

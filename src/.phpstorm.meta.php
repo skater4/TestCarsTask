@@ -2135,11 +2135,12 @@ namespace PHPSTORM_META {
         registerArgumentsSet('middleware', 
 'web','api',);
         registerArgumentsSet('routes', 
-'generated::Rxigo0oOhr2wGR7K','home','dashboard','generated::ls8sqcsnUhOJ44ob','profile.edit',
-'profile.update','profile.destroy','password.edit','password.update','appearance',
-'register','generated::1hOl5JqnDY0GFoQB','login','generated::8ssaTxcsFWwKOR7B','password.request',
-'password.email','password.reset','password.store','verification.notice','verification.verify',
-'verification.send','password.confirm','generated::5e5mf5dJxDjuTwSs','logout','storage.local',);
+'generated::E7eWuxJSAWdEcE3o','home','dashboard','vote.index','vote.store',
+'generated::5FeH5HHHGGJmrbkr','profile.edit','profile.update','profile.destroy','password.edit',
+'password.update','appearance','register','generated::pBY3Kq667HVqFCND','login',
+'generated::CbwTbiouTLcszrlm','password.request','password.email','password.reset','password.store',
+'verification.notice','verification.verify','verification.send','password.confirm','generated::Rfx3QvAp8jFZ72UC',
+'logout','storage.local',);
         registerArgumentsSet('views', 
 'app','laravel-exceptions-renderer::components.card','laravel-exceptions-renderer::components.context','laravel-exceptions-renderer::components.editor','laravel-exceptions-renderer::components.header',
 'laravel-exceptions-renderer::components.icons.chevron-down','laravel-exceptions-renderer::components.icons.chevron-up','laravel-exceptions-renderer::components.icons.computer-desktop','laravel-exceptions-renderer::components.icons.moon','laravel-exceptions-renderer::components.icons.sun',

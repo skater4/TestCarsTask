@@ -40,6 +40,9 @@ namespace App\Models{
  * @property bool $is_biddable
  * @property int $status
  * @property string $image
+ * @property-read \App\Models\Make $make
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Vote> $votes
+ * @property-read int|null $votes_count
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AuctionItem newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AuctionItem newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AuctionItem query()
@@ -121,5 +124,24 @@ namespace App\Models{
  */
 	#[\AllowDynamicProperties]
 	class IdeHelperUser {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property int $auction_item_id
+ * @property \Illuminate\Support\Carbon $created_at
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Vote newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Vote newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Vote query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Vote whereAuctionItemId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Vote whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Vote whereId($value)
+ * @mixin \Eloquent
+ */
+	#[\AllowDynamicProperties]
+	class IdeHelperVote {}
 }
 

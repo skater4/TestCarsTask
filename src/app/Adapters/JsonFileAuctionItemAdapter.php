@@ -2,7 +2,7 @@
 
 namespace App\Adapters;
 
-use App\Contracts\AuctionItemProviderInterface;
+use App\Contracts\AuctionItemAdapterInterface;
 use App\Dto\AuctionItemImportDto;
 use FilesystemIterator;
 use Generator;
@@ -10,7 +10,7 @@ use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use Storage;
 
-class JsonFileAuctionItemAdapter implements AuctionItemProviderInterface
+class JsonFileAuctionItemAdapter implements AuctionItemAdapterInterface
 {
     public function __construct(protected string $directory) {}
 

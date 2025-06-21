@@ -42,6 +42,13 @@
         @routes
         @vite(['resources/js/app.ts', "resources/js/pages/{$page['component']}.vue"])
         @inertiaHead
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- ezPlus plugin -->
+        <script src="https://www.jqueryscript.net/demo/Image-Zoom-Viewer-Gallery-Plugin-jQuery-ezPlus/jquery.ez-plus.js"></script>
+
     </head>
     <body class="font-sans antialiased">
         @inertia

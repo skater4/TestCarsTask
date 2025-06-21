@@ -1,0 +1,59 @@
+volumes:
+  pgdata:
+
+services:
+  laravel:
+    restart: always
+    build:
+      context: ./
+      dockerfile: ./docker/laravel/Dockerfile
+    ports:
+      - "8888:8000"
+      - "6001:6001"
+    links:
+      - redis
+      - postgres
+    volumes:
+      - ./src:/var/www/html
+
+  nginx:
+    restart: always
+    build:
+      context: ./docker/nginx
+    ports:
+      - "80:80"
+    links:
+      - laravel:fpm
+    volumes:
+      - ./src:/var/www/html
+
+  node:
+    restart: always
+    build:
+      context: ./
+      dockerfile: ./docker/node/Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./src:/var/www/html
+    command: npm run dev
+    stop_signal: SIGKILL
+
+  redis:
+    restart: always
+    image: redis:latest
+
+  postgres:
+    restart: always
+    image: postgres:17-alpine
+    shm_size: 16g
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+      - ./src:/src
+      - ./src/database:/database
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    ports:
+      - "5432:5432"
